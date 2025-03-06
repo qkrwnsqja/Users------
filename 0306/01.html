@@ -3,9 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dynamic Content</title>
+    <style>
+        #content {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20%;
+        }
+    </style>
 </head>
 <body>
-    <h1>welcome HTML5, css3, Javascript</h1>
+    <div id="content">Welcome!</div>
+
+    <script>
+        const messages = [
+            "Welcome!",
+            "Hello, World!",
+            "Enjoy your stay!",
+            "Have a great day!",
+            "See you soon!"
+        ];
+
+        let index = 0;
+        const contentElement = document.getElementById('content');
+
+        setInterval(() => {
+            index = (index + 1) % messages.length;
+            contentElement.textContent = messages[index];
+        }, 3000);
+    </script>
 </body>
 </html>
